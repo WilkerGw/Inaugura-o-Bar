@@ -1,14 +1,23 @@
-.main, .secondary {
+/* src/app/page.module.css */
+
+.page {
+  position: relative;
+}
+
+.main,
+.secondary {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh; /* Usar min-height para garantir que o conteúdo caiba */
   position: relative;
+  padding: 1rem; /* Adiciona padding para evitar que o conteúdo toque as bordas */
 }
 
 .main {
+  /* Fundo padrão para mobile */
   background-image: url("/background-mobile.png");
   background-size: cover;
   background-position: center;
@@ -20,21 +29,26 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   gap: 1rem;
+  padding: 1rem; 
+  z-index: 5;
 }
 
-.heroSection{
+.heroSection {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center; /* Garante o alinhamento central do texto */
 }
 
-.heroSection h1, .heroSection h2 {
+.heroSection h1,
+.heroSection h2 {
   font-weight: bold;
   text-transform: uppercase;
+  z-index: 3;
 }
 
 .heroSection h1 {
@@ -50,10 +64,39 @@
 }
 
 .logoBeer {
-
 }
 
 .logo {
   width: 70%;
   height: auto;
+  max-width: 500px; /* Limita o tamanho máximo do logo em telas grandes */
+  z-index: 3;
+}
+
+.secondary {
+  background-color: #0d0d0d;
+  padding: 4rem 1rem;
+}
+
+/* --- Media Query para Telas Maiores (Desktops) --- */
+@media (min-width: 1024px) {
+  .main {
+    /* Novo fundo para desktop */
+    background-image: url("/background-desktop.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .heroSection h1 {
+    font-size: 2.5rem; /* Aumenta a fonte do título principal */
+  }
+
+  .heroSection h2 {
+    font-size: 2rem; /* Aumenta a fonte do subtítulo */
+  }
+
+  .logo {
+    max-width: 15rem; /* Permite que o logo cresça um pouco mais */
+  }
 }

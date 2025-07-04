@@ -1,0 +1,126 @@
+/* src/app/components/Booking.module.css */
+.bookingContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    color: #eeeeee;
+    z-index: 3;
+}
+
+.bookingContainer h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #eeeeee;
+}
+
+.bookingForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.areaSelector {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap; 
+}
+
+.areaButton {
+    padding: 0.8rem 1.5rem;
+    font-family: 'Anton', sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: #eeeeee;
+    border: 2px solid #eeeeee;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.areaButton.active, .areaButton:hover {
+    background-color: #eeeeee;
+    color: #1a1a1a;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.formInput {
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: #eeeeee;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.formRow {
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 480px) {
+    .formRow {
+        flex-direction: column;
+    }
+}
+
+
+.formRow .formGroup {
+    flex: 1;
+}
+
+.submitButton {
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: #ffc107;
+    color: #1a1a1a;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submitButton:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+    .bookingContainer h2 {
+        font-size: 1.7rem;
+    }
+}
+
+/* --- Media Query para Telas Maiores (Desktops) --- */
+@media (min-width: 1200px) {
+    .bookingContainer {
+        max-width: 800px; /* Aumenta a largura máxima do formulário */
+        padding: 3rem;
+    }
+
+    .bookingContainer h2 {
+        font-size: 3rem;
+    }
+}
